@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
@@ -25,6 +26,7 @@ namespace WindowsService1
                 }
                 else
                 {
+                    Directory.CreateDirectory(@fileLocation.Replace(@fileLocation.Split('\\').Last(),""));
                     FileStream fileStream = File.Create(@fileLocation);
                     fileStream.Close();
                     json = @"[]";

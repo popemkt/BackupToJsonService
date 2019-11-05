@@ -12,7 +12,7 @@ namespace WindowsService1
     {
         private Timer timer;
         private int Interval;
-        #region ServiceStatus
+        #region ServiceStatus: boilerplate for setting service status
         public enum ServiceState
         {
             SERVICE_STOPPED = 0x00000001,

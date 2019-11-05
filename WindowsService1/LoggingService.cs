@@ -15,6 +15,8 @@ namespace WindowsService1
             string logLocation = ConfigurationManager.AppSettings.Get("LogFileLocation");
             try
             {
+                string directory = @logLocation.Replace(@logLocation.Split('\\').Last(), "");
+                Directory.CreateDirectory(directory);
                 File.AppendAllLines(@logLocation, new string[] { DateTime.Now + ": " + message });
             }
             catch (Exception) { }
